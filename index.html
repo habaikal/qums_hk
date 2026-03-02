@@ -30,14 +30,19 @@
             <img src="./logo.png" alt="QUMS Logo" style="height: 40px; width: auto;">
             QUMS
         </a>
+                <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en" onclick="changeLanguage('en')">EN</button>
+            <button class="lang-btn" data-lang="ko" onclick="changeLanguage('ko')">KO</button>
+            <button class="lang-btn" data-lang="zh" onclick="changeLanguage('zh')">ZH</button>
+        </div>
         <div class="menu-toggle" id="mobile-menu">
             <i class="fa-solid fa-bars"></i>
         </div>
         <div class="nav-links" id="nav-links">
-            <a href="#identity">Identity</a>
-            <a href="#ecosystem">Ecosystem</a>
-            <a href="#architecture">Tech</a>
-            <a href="#projections">Projections</a>
+            <a href="#identity" data-i18n="nav_identity">Identity</a>
+            <a href="#ecosystem" data-i18n="nav_ecosystem">Ecosystem</a>
+            <a href="#architecture" data-i18n="nav_tech">Tech</a>
+            <a href="#projections" data-i18n="nav_projections">Projections</a>
         </div>
     </nav>
 
@@ -55,15 +60,14 @@
                 <h1 class="hero-title">QUMS GROUP</h1>
                 <p
                     style="font-size: 24px; letter-spacing: 5px; color: var(--primary-cyan); font-family: 'Orbitron'; margin-bottom: 30px; text-shadow: 0 0 10px rgba(0,210,255,0.3);">
-                    QUANTUM FINANCE ECOSYSTEM</p>
-                <p class="hero-subtitle">The Next-Gen Global Digital Dollar Infrastructure powered by Post-Quantum
-                    Security & High-Quality Liquid Assets.</p>
-                <a href="#identity" class="btn btn-primary">Discover the Future</a>
+                    </span><span data-i18n="hero_ecosystem">QUANTUM FINANCE ECOSYSTEM</span></p>
+                <p class="hero-subtitle" data-i18n="hero_subtitle">The Next-Gen Global Digital Dollar Infrastructure powered by Post-Quantum Security & High-Quality Liquid Assets.</p>
+                <a href="#identity" class="btn btn-primary" data-i18n="hero_btn">Discover the Future</a>
                 <div style="margin-top: 80px; display: flex; justify-content: center;">
                     <video autoplay loop muted playsinline
                         style="max-width: 90%; width: 450px; height: auto; mix-blend-mode: screen; filter: drop-shadow(0 15px 35px rgba(0, 210, 255, 0.4)); animation: float 6s ease-in-out infinite;">
                         <source src="./USDQS.mp4" type="video/mp4">
-                        브라우저가 비디오 태그를 지원하지 않습니다.
+                        Your browser does not support the video tag.
                     </video>
                 </div>
             </div>
@@ -74,23 +78,19 @@
     <section id="identity">
         <div class="container">
             <div class="reveal">
-                <h2 class="section-title">Corporate Identity</h2>
-                <div class="section-subtitle">Legal Status & Strategic Foundation</div>
+                <h2 class="section-title" data-i18n="id_title">Corporate Identity</h2>
+                <div class="section-subtitle" data-i18n="id_subtitle">Legal Status & Strategic Foundation</div>
             </div>
 
             <div class="grid-2">
                 <div class="glass-card reveal delay-1">
-                    <h3>Registered Information</h3>
-                    <p style="margin: 15px 0 25px; color: var(--text-dim);">Based on Certificate of Incorporation (No.
-                        79281279)</p>
+                    <h3 data-i18n="id_reg_info">Registered Information</h3>
+                    <p style="margin: 15px 0 25px; color: var(--text-dim);"><span data-i18n="id_reg_desc">Based on Certificate of Incorporation (No. 79281279)</span></p>
                     <ul class="custom-list">
-                        <li><i class="fa-solid fa-building"></i> <span><strong>Entity:</strong> QUMS Group Limited
-                                (Limited by Shares)</span></li>
-                        <li><i class="fa-solid fa-calendar"></i> <span><strong>Incorporated:</strong> 28 November 2025
-                                (Hong Kong)</span></li>
-                        <li><i class="fa-solid fa-location-dot"></i> <span><strong>HQ:</strong> RM 14, 29/F, Ho King
-                                Comm Centre, Mong Kok, HK</span></li>
-                        <li><i class="fa-solid fa-user-tie"></i> <span><strong>Founder:</strong> Song Chang Moo</span>
+                        <li><i class="fa-solid fa-building"></i> <span><span data-i18n="id_entity">Entity: QUMS Group Limited (Limited by Shares)</span></span></li>
+                        <li><i class="fa-solid fa-calendar"></i> <span><span data-i18n="id_inc">Incorporated: 28 November 2025 (Hong Kong)</span></span></li>
+                        <li><i class="fa-solid fa-location-dot"></i> <span><span data-i18n="id_hq">HQ: RM 14, 29/F, Ho King Comm Centre, Mong Kok, HK</span></span></li>
+                        <li><i class="fa-solid fa-user-tie"></i> <span><span data-i18n="id_founder">Founder: Song Chang Moo</span></span>
                         </li>
                     </ul>
                 </div>
@@ -98,14 +98,13 @@
                 <div style="display: flex; flex-direction: column; gap: 30px;">
                     <div class="glass-card reveal delay-2"
                         style="border-left: 4px solid var(--primary-blue); padding: 30px;">
-                        <h3 style="color: var(--primary-blue); margin-bottom: 10px;">HKMA Compliance</h3>
-                        <p>Aligning with Hong Kong Stablecoin Regulatory Sandbox guidelines for absolute legal
-                            certainty.</p>
+                        <h3 style="color: var(--primary-blue); margin-bottom: 10px;" data-i18n="hkma_title">HKMA Compliance</h3>
+                        <p data-i18n="hkma_desc">Aligning with Hong Kong Stablecoin Regulatory Sandbox guidelines for absolute legal certainty.</p>
                     </div>
                     <div class="glass-card reveal delay-3"
                         style="border-left: 4px solid var(--primary-cyan); padding: 30px;">
-                        <h3 style="color: var(--primary-cyan); margin-bottom: 10px;">Reserve Safety</h3>
-                        <p>100% Cash & HQLA segregation in top-tier licensed financial institutions.</p>
+                        <h3 style="color: var(--primary-cyan); margin-bottom: 10px;" data-i18n="reserve_title">Reserve Safety</h3>
+                        <p data-i18n="reserve_desc">100% Cash & HQLA segregation in top-tier licensed financial institutions.</p>
                     </div>
                 </div>
             </div>
@@ -116,30 +115,28 @@
     <section id="ecosystem">
         <div class="container">
             <div class="reveal text-center" style="text-align: center; margin-bottom: 60px;">
-                <h2 class="section-title">Digital Dollar Hub</h2>
-                <div class="section-subtitle">Massive RWA Collateralization & Quantum Security</div>
+                <h2 class="section-title" data-i18n="eco_title">Digital Dollar Hub</h2>
+                <div class="section-subtitle" data-i18n="eco_subtitle">Massive RWA Collateralization & Quantum Security</div>
             </div>
 
             <div class="glass-card reveal" style="margin-bottom: 50px;">
                 <div class="grid-2" style="align-items: center;">
                     <div class="stat-card">
                         <div class="stat-value">$880B</div>
-                        <div class="stat-label">Underlying Assets in HK</div>
+                        <div class="stat-label" data-i18n="stat_assets">Underlying Assets in HK</div>
                         <div class="stat-divider"></div>
                         <div class="stat-value" style="font-size: clamp(30px, 4vw, 50px); color: var(--primary-blue);">
                             $240B</div>
-                        <div class="stat-label">Initial Targeted Issuance</div>
+                        <div class="stat-label" data-i18n="stat_issuance">Initial Targeted Issuance</div>
                     </div>
                     <div>
-                        <h3 style="margin-bottom: 20px;">Reliability Model</h3>
+                        <h3 style="margin-bottom: 20px;" data-i18n="rel_title">Reliability Model</h3>
                         <ul class="custom-list">
-                            <li><i class="fa-solid fa-shield-halved"></i> <span>Post-Quantum Cryptography against future
-                                    threats</span></li>
-                            <li><i class="fa-solid fa-vault"></i> <span>Segregated Trustee Custody</span></li>
-                            <li><i class="fa-solid fa-file-contract"></i> <span>Monthly External Attestations</span>
+                            <li><i class="fa-solid fa-shield-halved"></i> <span data-i18n="rel_1">Post-Quantum Cryptography against future threats</span></li>
+                            <li><i class="fa-solid fa-vault"></i> <span data-i18n="rel_2">Segregated Trustee Custody</span></li>
+                            <li><i class="fa-solid fa-file-contract"></i> <span data-i18n="rel_3">Monthly External Attestations</span>
                             </li>
-                            <li><i class="fa-solid fa-chart-pie"></i> <span>100% Cash & Cash Equivalents with Real-time
-                                    PoR</span></li>
+                            <li><i class="fa-solid fa-chart-pie"></i> <span data-i18n="rel_4">100% Cash & Cash Equivalents with Real-time PoR</span></li>
                         </ul>
                     </div>
                 </div>
@@ -148,21 +145,18 @@
             <div class="grid-3">
                 <div class="glass-card reveal delay-1" style="text-align: center;">
                     <div class="icon-box" style="margin: 0 auto 20px;"><i class="fa-solid fa-microchip"></i></div>
-                    <h3>Quantum Core</h3>
-                    <p style="margin-top: 15px; font-size: 14px; color: var(--text-dim);">Utilizing superposition logic
-                        for ultra-high throughput transactions & advanced risk analysis.</p>
+                    <h3 data-i18n="quantum_title">Quantum Core</h3>
+                    <p style="margin-top: 15px; font-size: 14px; color: var(--text-dim);"><span data-i18n="quantum_desc">Utilizing superposition logic for ultra-high throughput transactions & advanced risk analysis.</span></p>
                 </div>
                 <div class="glass-card reveal delay-2" style="text-align: center;">
                     <div class="icon-box" style="margin: 0 auto 20px;"><i class="fa-solid fa-coins"></i></div>
-                    <h3>USDQS Token</h3>
-                    <p style="margin-top: 15px; font-size: 14px; color: var(--text-dim);">1:1 USD-linked stablecoin
-                        acting as a liquid reserve asset for global participants.</p>
+                    <h3 data-i18n="token_title">USDQS Token</h3>
+                    <p style="margin-top: 15px; font-size: 14px; color: var(--text-dim);"><span data-i18n="token_desc">1:1 USD-linked stablecoin acting as a liquid reserve asset for global participants.</span></p>
                 </div>
                 <div class="glass-card reveal delay-3" style="text-align: center;">
                     <div class="icon-box" style="margin: 0 auto 20px;"><i class="fa-solid fa-globe"></i></div>
-                    <h3>Cross-border</h3>
-                    <p style="margin-top: 15px; font-size: 14px; color: var(--text-dim);">Seamless core settlement layer
-                        bridging traditional finance and blockchain economies.</p>
+                    <h3 data-i18n="cross_title">Cross-border</h3>
+                    <p style="margin-top: 15px; font-size: 14px; color: var(--text-dim);"><span data-i18n="cross_desc">Seamless core settlement layer bridging traditional finance and blockchain economies.</span></p>
                 </div>
             </div>
         </div>
@@ -172,8 +166,8 @@
     <section id="architecture">
         <div class="container">
             <div class="reveal">
-                <h2 class="section-title">Platform Architecture</h2>
-                <div class="section-subtitle">Hybrid Layered Stack & Modular Contracts</div>
+                <h2 class="section-title" data-i18n="arch_title">Platform Architecture</h2>
+                <div class="section-subtitle" data-i18n="arch_subtitle">Hybrid Layered Stack & Modular Contracts</div>
             </div>
 
             <div class="glass-card reveal" style="margin-bottom: 40px;">
@@ -181,27 +175,26 @@
                     <div style="padding: 20px; border-bottom: 2px solid var(--glass-border);">
                         <i class="fa-brands fa-react"
                             style="font-size: 30px; color: var(--primary-cyan); margin-bottom: 15px;"></i>
-                        <h4>Frontend</h4>
-                        <p style="font-size: 12px; margin-top: 10px; color: var(--text-dim);">React / Mobile App</p>
+                        <h4 data-i18n="arch_front">Frontend</h4>
+                        <p style="font-size: 12px; margin-top: 10px; color: var(--text-dim);" data-i18n="arch_front_desc">React / Mobile App</p>
                     </div>
                     <div style="padding: 20px; border-bottom: 2px solid var(--glass-border);">
                         <i class="fa-solid fa-network-wired"
                             style="font-size: 30px; color: var(--primary-cyan); margin-bottom: 15px;"></i>
-                        <h4>Gateway</h4>
-                        <p style="font-size: 12px; margin-top: 10px; color: var(--text-dim);">Throttling / WAF</p>
+                        <h4 data-i18n="arch_gw">Gateway</h4>
+                        <p style="font-size: 12px; margin-top: 10px; color: var(--text-dim);" data-i18n="arch_gw_desc">Throttling / WAF</p>
                     </div>
                     <div style="padding: 20px; border-bottom: 2px solid var(--primary-blue);">
                         <i class="fa-solid fa-server"
                             style="font-size: 30px; color: var(--primary-blue); margin-bottom: 15px;"></i>
-                        <h4>Backend</h4>
-                        <p style="font-size: 12px; margin-top: 10px; color: var(--text-dim);">FastAPI / Microservices
-                        </p>
+                        <h4 data-i18n="arch_back">Backend</h4>
+                        <p style="font-size: 12px; margin-top: 10px; color: var(--text-dim);" data-i18n="arch_back_desc">FastAPI / Microservices</p>
                     </div>
                     <div style="padding: 20px; border-bottom: 2px solid var(--primary-blue);">
                         <i class="fa-solid fa-lock"
                             style="font-size: 30px; color: var(--primary-blue); margin-bottom: 15px;"></i>
-                        <h4>Custody</h4>
-                        <p style="font-size: 12px; margin-top: 10px; color: var(--text-dim);">MPC / HSM Vault</p>
+                        <h4 data-i18n="arch_custody">Custody</h4>
+                        <p style="font-size: 12px; margin-top: 10px; color: var(--text-dim);" data-i18n="arch_custody_desc">MPC / HSM Vault</p>
                     </div>
                 </div>
 
@@ -215,17 +208,13 @@
                         style="background: rgba(0,0,0,0.2); padding: 25px; border-radius: 16px; border: 1px solid var(--glass-border);">
                         <h4 style="color: var(--primary-cyan); margin-bottom: 15px;"><i
                                 class="fa-brands fa-ethereum"></i> Blockchain Layer</h4>
-                        <p style="font-size: 14px; color: var(--text-dim);">Ethereum L1 (ERC-20), Polygon Bridge,
-                            Arbitrum Scalability. Smart contracts govern Token Mint/Burn, Collateral Management, and
-                            automated Fiat-to-Token workflows.</p>
+                        <p style="font-size: 14px; color: var(--text-dim);"><span data-i18n="bc_desc">Ethereum L1 (ERC-20), Polygon Bridge, Arbitrum Scalability. Smart contracts govern Token Mint/Burn, Collateral Management, and automated Fiat-to-Token workflows.</span></p>
                     </div>
                     <div
                         style="background: rgba(0,0,0,0.2); padding: 25px; border-radius: 16px; border: 1px solid var(--glass-border);">
                         <h4 style="color: var(--primary-cyan); margin-bottom: 15px;"><i
                                 class="fa-solid fa-magnifying-glass-chart"></i> Audit & Oracle</h4>
-                        <p style="font-size: 14px; color: var(--text-dim);">SIEM & WORM Storage, Forensic Audit Logs.
-                            Reserve Oracles connect off-chain banking data to on-chain transparency dashboards securely.
-                        </p>
+                        <p style="font-size: 14px; color: var(--text-dim);"><span data-i18n="audit_desc">SIEM & WORM Storage, Forensic Audit Logs. Reserve Oracles connect off-chain banking data to on-chain transparency dashboards securely.</span></p>
                     </div>
                 </div>
             </div>
@@ -236,8 +225,8 @@
     <section id="projections">
         <div class="container">
             <div class="reveal">
-                <h2 class="section-title">Growth Trajectory</h2>
-                <div class="section-subtitle">5-Year Revenue Projections (Billion USD)</div>
+                <h2 class="section-title" data-i18n="proj_title">Growth Trajectory</h2>
+                <div class="section-subtitle" data-i18n="proj_subtitle">5-Year Revenue Projections (Billion USD)</div>
             </div>
 
             <div class="glass-card reveal">
@@ -247,31 +236,31 @@
                             <div class="bar" style="--target-height: 15%;" data-value="$1.5B">
                                 <div class="bar-value">$1.5B</div>
                             </div>
-                            <div class="bar-label">Year 1</div>
+                            <div class="bar-label" data-i18n="year_1">Year 1</div>
                         </div>
                         <div class="bar-wrapper">
                             <div class="bar" style="--target-height: 26%;" data-value="$2.6B">
                                 <div class="bar-value">$2.6B</div>
                             </div>
-                            <div class="bar-label">Year 2</div>
+                            <div class="bar-label" data-i18n="year_2">Year 2</div>
                         </div>
                         <div class="bar-wrapper">
                             <div class="bar" style="--target-height: 44%;" data-value="$4.4B">
                                 <div class="bar-value">$4.4B</div>
                             </div>
-                            <div class="bar-label">Year 3</div>
+                            <div class="bar-label" data-i18n="year_3">Year 3</div>
                         </div>
                         <div class="bar-wrapper">
                             <div class="bar" style="--target-height: 66%;" data-value="$6.6B">
                                 <div class="bar-value">$6.6B</div>
                             </div>
-                            <div class="bar-label">Year 4</div>
+                            <div class="bar-label" data-i18n="year_4">Year 4</div>
                         </div>
                         <div class="bar-wrapper">
                             <div class="bar" style="--target-height: 94%;" data-value="$9.4B">
                                 <div class="bar-value">$9.4B</div>
                             </div>
-                            <div class="bar-label">Year 5</div>
+                            <div class="bar-label" data-i18n="year_5">Year 5</div>
                         </div>
                     </div>
                 </div>
@@ -284,7 +273,7 @@
                             $4.0B</div>
                         <div
                             style="font-size: 13px; color: var(--text-dim); text-transform: uppercase; margin-top: 5px;">
-                            Reserve Interest (Y5)</div>
+                            </span><span data-i18n="res_interest">Reserve Interest (Y5)</span></div>
                     </div>
                     <div
                         style="text-align: center; padding: 20px; background: rgba(0,210,255,0.05); border-radius: 16px; border: 1px solid rgba(0,210,255,0.2);">
@@ -293,7 +282,7 @@
                             $4.5B</div>
                         <div
                             style="font-size: 13px; color: var(--text-dim); text-transform: uppercase; margin-top: 5px;">
-                            Platform Fees (Y5)</div>
+                            </span><span data-i18n="plat_fees">Platform Fees (Y5)</span></div>
                     </div>
                     <div
                         style="text-align: center; padding: 20px; background: rgba(58,134,255,0.05); border-radius: 16px; border: 1px solid rgba(58,134,255,0.2);">
@@ -301,8 +290,7 @@
                             style="font-size: 30px; font-weight: bold; color: var(--primary-blue); font-family: 'Orbitron';">
                             $17.1B</div>
                         <div
-                            style="font-size: 13px; color: var(--text-dim); text-transform: uppercase; margin-top: 5px;">
-                            Cumulative Profit</div>
+                            style="font-size: 13px; color: var(--text-dim); text-transform: uppercase; margin-top: 5px;"><span data-i18n="cum_profit">Cumulative Profit</span></div>
                     </div>
                 </div>
             </div>
@@ -313,21 +301,17 @@
     <footer
         style="padding: 80px 0 40px; border-top: 1px solid var(--glass-border); background: rgba(0,0,0,0.5); text-align: center;">
         <div class="container">
-            <h2 style="font-size: clamp(30px, 5vw, 50px); margin-bottom: 20px;">STABILITY MEETS <span
-                    style="color: var(--primary-cyan);">QUANTUM</span></h2>
-            <p style="color: var(--text-dim); max-width: 600px; margin: 0 auto 50px;">Building the most trusted global
-                digital dollar infrastructure with RWA-backed reliability and quantum-speed settlement.</p>
+            <h2 style="font-size: clamp(30px, 5vw, 50px); margin-bottom: 20px;"><span data-i18n="footer_title1">STABILITY MEETS</span> <span style="color: var(--primary-cyan);" data-i18n="footer_title2">QUANTUM</span></h2>
+            <p style="color: var(--text-dim); max-width: 600px; margin: 0 auto 50px;"><span data-i18n="footer_desc">Building the most trusted global digital dollar infrastructure with RWA-backed reliability and quantum-speed settlement.</span></p>
 
             <div class="grid-2" style="max-width: 800px; margin: 0 auto 50px; text-align: left;">
                 <div class="glass-card" style="padding: 25px;">
                     <h4 style="color: var(--primary-cyan); margin-bottom: 10px;">QUMS Group Limited</h4>
-                    <p style="font-size: 14px; color: var(--text-dim);">Corporate Reg No: 79281279<br>Mong Kok, Hong
-                        Kong SAR</p>
+                    <p style="font-size: 14px; color: var(--text-dim);"><span data-i18n="footer_corp_desc1">Corporate Reg No: 79281279</span><br><span data-i18n="footer_corp_desc2">Mong Kok, Hong Kong SAR</span></p>
                 </div>
                 <div class="glass-card" style="padding: 25px;">
                     <h4 style="color: var(--primary-cyan); margin-bottom: 10px;">Partnerships</h4>
-                    <p style="font-size: 14px; color: var(--text-dim);">Supported by Dentons, DLA Piper<br>Big Four
-                        Independent Audit</p>
+                    <p style="font-size: 14px; color: var(--text-dim);"><span data-i18n="footer_partners_desc1">Supported by Dentons, DLA Piper</span><br><span data-i18n="footer_partners_desc2">Big Four Independent Audit</span></p>
                 </div>
             </div>
 
@@ -335,13 +319,13 @@
                 <a href="#" style="color: inherit; text-decoration: none; margin-right: 20px;">www.qums.group</a>
                 <a href="mailto:info@qums.group" style="color: inherit; text-decoration: none;">info@qums.group</a>
             </p>
-            <p style="font-size: 12px; color: rgba(255,255,255,0.3);">&copy; 2026 QUMS Group Limited. All rights
-                reserved.</p>
+            <p style="font-size: 12px; color: rgba(255,255,255,0.3);"><span data-i18n="footer_copy">© 2026 QUMS Group Limited. All rights reserved.</span></p>
         </div>
     </footer>
 
     <!-- JavaScript for Interactions -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script src="lang.js"></script>
     <script src="script.js"></script>
 </body>
 

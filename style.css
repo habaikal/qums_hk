@@ -487,6 +487,31 @@
             }
         }
 
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-dim);
+            padding: 5px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: rgba(0, 210, 255, 0.2);
+            border-color: var(--primary-cyan);
+            color: #fff;
+        }
+
         /* Mobile Menu */
         .menu-toggle {
             display: none;
