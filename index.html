@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QUMS Group - Premium Corporate Profile</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
@@ -20,17 +23,17 @@
             --glass-highlight: rgba(255, 255, 255, 0.05);
         }
 
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
             scroll-behavior: smooth;
         }
 
-        body { 
-            background-color: var(--bg-deep); 
-            font-family: 'Poppins', sans-serif; 
-            color: var(--text-main); 
+        body {
+            background-color: var(--bg-deep);
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
@@ -56,15 +59,50 @@
             border-radius: 50%;
         }
 
-        .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: rgba(0, 210, 255, 0.15); animation-delay: 0s; }
-        .blob-2 { bottom: -20%; right: -10%; width: 60vw; height: 60vw; background: rgba(58, 134, 255, 0.15); animation-delay: -5s; }
-        .blob-3 { top: 40%; left: 50%; width: 40vw; height: 40vw; background: rgba(0, 210, 255, 0.1); transform: translateX(-50%); animation-delay: -10s; }
+        .blob-1 {
+            top: -10%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: rgba(0, 210, 255, 0.15);
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            bottom: -20%;
+            right: -10%;
+            width: 60vw;
+            height: 60vw;
+            background: rgba(58, 134, 255, 0.15);
+            animation-delay: -5s;
+        }
+
+        .blob-3 {
+            top: 40%;
+            left: 50%;
+            width: 40vw;
+            height: 40vw;
+            background: rgba(0, 210, 255, 0.1);
+            transform: translateX(-50%);
+            animation-delay: -10s;
+        }
 
         @keyframes float {
-            0% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(5%, 5%) scale(1.05); }
-            66% { transform: translate(-5%, 2%) scale(0.95); }
-            100% { transform: translate(0, -5%) scale(1); }
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(5%, 5%) scale(1.05);
+            }
+
+            66% {
+                transform: translate(-5%, 2%) scale(0.95);
+            }
+
+            100% {
+                transform: translate(0, -5%) scale(1);
+            }
         }
 
         /* Navbar */
@@ -189,8 +227,14 @@
         }
 
         /* Typography */
-        h1, h2, h3, h4 { font-family: 'Orbitron', sans-serif; letter-spacing: 1px; }
-        
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+
         .section-title {
             font-size: 48px;
             text-transform: uppercase;
@@ -259,20 +303,43 @@
         .btn-primary::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: linear-gradient(45deg, var(--primary-blue), var(--primary-cyan));
             z-index: -1;
             transition: opacity 0.3s ease;
             opacity: 0;
         }
 
-        .btn-primary:hover::before { opacity: 1; }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(0, 210, 255, 0.5); }
+        .btn-primary:hover::before {
+            opacity: 1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(0, 210, 255, 0.5);
+        }
 
         /* Grid Layouts */
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
 
         /* Icon Box */
         .icon-box {
@@ -291,15 +358,52 @@
         }
 
         /* Stats */
-        .stat-card { text-align: center; }
-        .stat-value { font-size: clamp(40px, 6vw, 70px); font-weight: 700; color: var(--primary-cyan); font-family: 'Orbitron'; line-height: 1; margin-bottom: 10px;text-shadow: 0 0 20px rgba(0,210,255,0.4); }
-        .stat-label { font-size: 18px; color: #fff; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;}
-        .stat-divider { height: 2px; background: linear-gradient(90deg, transparent, var(--primary-cyan), transparent); margin: 30px auto; width: 80%; }
+        .stat-card {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: clamp(40px, 6vw, 70px);
+            font-weight: 700;
+            color: var(--primary-cyan);
+            font-family: 'Orbitron';
+            line-height: 1;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+        }
+
+        .stat-label {
+            font-size: 18px;
+            color: #fff;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-cyan), transparent);
+            margin: 30px auto;
+            width: 80%;
+        }
 
         /* Lists */
-        .custom-list { list-style: none; }
-        .custom-list li { margin-bottom: 15px; display: flex; align-items: flex-start; }
-        .custom-list li i { color: var(--primary-cyan); margin-right: 15px; margin-top: 5px; font-size: 18px; }
+        .custom-list {
+            list-style: none;
+        }
+
+        .custom-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .custom-list li i {
+            color: var(--primary-cyan);
+            margin-right: 15px;
+            margin-top: 5px;
+            font-size: 18px;
+        }
 
         /* Graph / Charts */
         .chart-container {
@@ -308,7 +412,7 @@
             position: relative;
             margin-bottom: 30px;
         }
-        
+
         .bar-chart {
             display: flex;
             height: 100%;
@@ -316,7 +420,7 @@
             gap: 10px;
             padding-top: 40px;
         }
-        
+
         .bar-wrapper {
             flex: 1;
             display: flex;
@@ -325,31 +429,32 @@
             height: 100%;
             justify-content: flex-end;
         }
-        
+
         .bar {
             width: 100%;
             background: linear-gradient(to top, rgba(0, 210, 255, 0.2), var(--primary-cyan));
             border-radius: 8px 8px 0 0;
             position: relative;
             transition: height 1.5s cubic-bezier(0.1, 0.8, 0.2, 1);
-            height: 0; /* Animated via JS */
-            box-shadow: 0 0 15px rgba(0,210,255,0.2);
-            border: 1px solid rgba(0,210,255,0.4);
+            height: 0;
+            /* Animated via JS */
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+            border: 1px solid rgba(0, 210, 255, 0.4);
             border-bottom: none;
         }
-        
+
         .bar:hover {
             filter: brightness(1.2);
-            box-shadow: 0 0 25px rgba(0,210,255,0.5);
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.5);
         }
-        
+
         .bar-label {
             margin-top: 15px;
             font-size: 14px;
             color: var(--text-dim);
             font-weight: 600;
         }
-        
+
         .bar-value {
             position: absolute;
             top: -30px;
@@ -373,14 +478,27 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-        
+
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.3s;
+        }
+
         @keyframes titleGlow {
-            0% { text-shadow: 0 0 20px rgba(0, 210, 255, 0.2); }
-            100% { text-shadow: 0 0 40px rgba(0, 210, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.5); }
+            0% {
+                text-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
+            }
+
+            100% {
+                text-shadow: 0 0 40px rgba(0, 210, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.5);
+            }
         }
 
         /* Mobile Menu */
@@ -406,29 +524,30 @@
                 transition: right 0.3s ease;
                 border-left: 1px solid var(--glass-border);
             }
-            
+
             .nav-links.active {
                 right: 0;
             }
-            
+
             .menu-toggle {
                 display: block;
             }
-            
+
             section {
                 padding: 100px 0 60px;
             }
-            
+
             .section-title {
                 font-size: 36px;
             }
-            
+
             .glass-card {
                 padding: 25px;
             }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Animated Background -->
@@ -440,7 +559,10 @@
 
     <!-- Navigation -->
     <nav id="navbar">
-        <a href="#home" class="logo">QUMS</a>
+        <a href="#home" class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <img src="./logo.png" alt="QUMS Logo" style="height: 40px; width: auto;">
+            QUMS
+        </a>
         <div class="menu-toggle" id="mobile-menu">
             <i class="fa-solid fa-bars"></i>
         </div>
@@ -456,14 +578,19 @@
     <section id="home">
         <div class="container">
             <div class="reveal">
-                <svg width="100" height="100" viewBox="0 0 100 100" style="margin: 0 auto 30px; display: block; filter: drop-shadow(0 0 10px rgba(0,210,255,0.5));">
+                <svg width="100" height="100" viewBox="0 0 100 100"
+                    style="margin: 0 auto 30px; display: block; filter: drop-shadow(0 0 10px rgba(0,210,255,0.5));">
                     <circle cx="50" cy="50" r="45" fill="none" stroke="var(--primary-cyan)" stroke-width="2" />
-                    <path d="M30 50 Q50 20 70 50 Q50 80 30 50" fill="none" stroke="var(--primary-cyan)" stroke-width="4" />
+                    <path d="M30 50 Q50 20 70 50 Q50 80 30 50" fill="none" stroke="var(--primary-cyan)"
+                        stroke-width="4" />
                     <circle cx="50" cy="50" r="10" fill="var(--primary-cyan)" />
                 </svg>
                 <h1 class="hero-title">QUMS GROUP</h1>
-                <p style="font-size: 24px; letter-spacing: 5px; color: var(--primary-cyan); font-family: 'Orbitron'; margin-bottom: 30px; text-shadow: 0 0 10px rgba(0,210,255,0.3);">QUANTUM FINANCE ECOSYSTEM</p>
-                <p class="hero-subtitle">The Next-Gen Global Digital Dollar Infrastructure powered by Post-Quantum Security & High-Quality Liquid Assets.</p>
+                <p
+                    style="font-size: 24px; letter-spacing: 5px; color: var(--primary-cyan); font-family: 'Orbitron'; margin-bottom: 30px; text-shadow: 0 0 10px rgba(0,210,255,0.3);">
+                    QUANTUM FINANCE ECOSYSTEM</p>
+                <p class="hero-subtitle">The Next-Gen Global Digital Dollar Infrastructure powered by Post-Quantum
+                    Security & High-Quality Liquid Assets.</p>
                 <a href="#identity" class="btn btn-primary">Discover the Future</a>
             </div>
         </div>
@@ -476,25 +603,33 @@
                 <h2 class="section-title">Corporate Identity</h2>
                 <div class="section-subtitle">Legal Status & Strategic Foundation</div>
             </div>
-            
+
             <div class="grid-2">
                 <div class="glass-card reveal delay-1">
                     <h3>Registered Information</h3>
-                    <p style="margin: 15px 0 25px; color: var(--text-dim);">Based on Certificate of Incorporation (No. 79281279)</p>
+                    <p style="margin: 15px 0 25px; color: var(--text-dim);">Based on Certificate of Incorporation (No.
+                        79281279)</p>
                     <ul class="custom-list">
-                        <li><i class="fa-solid fa-building"></i> <span><strong>Entity:</strong> QUMS Group Limited (Limited by Shares)</span></li>
-                        <li><i class="fa-solid fa-calendar"></i> <span><strong>Incorporated:</strong> 28 November 2025 (Hong Kong)</span></li>
-                        <li><i class="fa-solid fa-location-dot"></i> <span><strong>HQ:</strong> RM 14, 29/F, Ho King Comm Centre, Mong Kok, HK</span></li>
-                        <li><i class="fa-solid fa-user-tie"></i> <span><strong>Founder:</strong> Song Chang Moo</span></li>
+                        <li><i class="fa-solid fa-building"></i> <span><strong>Entity:</strong> QUMS Group Limited
+                                (Limited by Shares)</span></li>
+                        <li><i class="fa-solid fa-calendar"></i> <span><strong>Incorporated:</strong> 28 November 2025
+                                (Hong Kong)</span></li>
+                        <li><i class="fa-solid fa-location-dot"></i> <span><strong>HQ:</strong> RM 14, 29/F, Ho King
+                                Comm Centre, Mong Kok, HK</span></li>
+                        <li><i class="fa-solid fa-user-tie"></i> <span><strong>Founder:</strong> Song Chang Moo</span>
+                        </li>
                     </ul>
                 </div>
-                
+
                 <div style="display: flex; flex-direction: column; gap: 30px;">
-                    <div class="glass-card reveal delay-2" style="border-left: 4px solid var(--primary-blue); padding: 30px;">
+                    <div class="glass-card reveal delay-2"
+                        style="border-left: 4px solid var(--primary-blue); padding: 30px;">
                         <h3 style="color: var(--primary-blue); margin-bottom: 10px;">HKMA Compliance</h3>
-                        <p>Aligning with Hong Kong Stablecoin Regulatory Sandbox guidelines for absolute legal certainty.</p>
+                        <p>Aligning with Hong Kong Stablecoin Regulatory Sandbox guidelines for absolute legal
+                            certainty.</p>
                     </div>
-                    <div class="glass-card reveal delay-3" style="border-left: 4px solid var(--primary-cyan); padding: 30px;">
+                    <div class="glass-card reveal delay-3"
+                        style="border-left: 4px solid var(--primary-cyan); padding: 30px;">
                         <h3 style="color: var(--primary-cyan); margin-bottom: 10px;">Reserve Safety</h3>
                         <p>100% Cash & HQLA segregation in top-tier licensed financial institutions.</p>
                     </div>
@@ -510,23 +645,27 @@
                 <h2 class="section-title">Digital Dollar Hub</h2>
                 <div class="section-subtitle">Massive RWA Collateralization & Quantum Security</div>
             </div>
-            
+
             <div class="glass-card reveal" style="margin-bottom: 50px;">
                 <div class="grid-2" style="align-items: center;">
                     <div class="stat-card">
                         <div class="stat-value">$880B</div>
                         <div class="stat-label">Underlying Assets in HK</div>
                         <div class="stat-divider"></div>
-                        <div class="stat-value" style="font-size: clamp(30px, 4vw, 50px); color: var(--primary-blue);">$240B</div>
+                        <div class="stat-value" style="font-size: clamp(30px, 4vw, 50px); color: var(--primary-blue);">
+                            $240B</div>
                         <div class="stat-label">Initial Targeted Issuance</div>
                     </div>
                     <div>
                         <h3 style="margin-bottom: 20px;">Reliability Model</h3>
                         <ul class="custom-list">
-                            <li><i class="fa-solid fa-shield-halved"></i> <span>Post-Quantum Cryptography against future threats</span></li>
+                            <li><i class="fa-solid fa-shield-halved"></i> <span>Post-Quantum Cryptography against future
+                                    threats</span></li>
                             <li><i class="fa-solid fa-vault"></i> <span>Segregated Trustee Custody</span></li>
-                            <li><i class="fa-solid fa-file-contract"></i> <span>Monthly External Attestations</span></li>
-                            <li><i class="fa-solid fa-chart-pie"></i> <span>100% Cash & Cash Equivalents with Real-time PoR</span></li>
+                            <li><i class="fa-solid fa-file-contract"></i> <span>Monthly External Attestations</span>
+                            </li>
+                            <li><i class="fa-solid fa-chart-pie"></i> <span>100% Cash & Cash Equivalents with Real-time
+                                    PoR</span></li>
                         </ul>
                     </div>
                 </div>
@@ -536,17 +675,20 @@
                 <div class="glass-card reveal delay-1" style="text-align: center;">
                     <div class="icon-box" style="margin: 0 auto 20px;"><i class="fa-solid fa-microchip"></i></div>
                     <h3>Quantum Core</h3>
-                    <p style="margin-top: 15px; font-size: 14px; color: var(--text-dim);">Utilizing superposition logic for ultra-high throughput transactions & advanced risk analysis.</p>
+                    <p style="margin-top: 15px; font-size: 14px; color: var(--text-dim);">Utilizing superposition logic
+                        for ultra-high throughput transactions & advanced risk analysis.</p>
                 </div>
                 <div class="glass-card reveal delay-2" style="text-align: center;">
                     <div class="icon-box" style="margin: 0 auto 20px;"><i class="fa-solid fa-coins"></i></div>
                     <h3>USDQS Token</h3>
-                    <p style="margin-top: 15px; font-size: 14px; color: var(--text-dim);">1:1 USD-linked stablecoin acting as a liquid reserve asset for global participants.</p>
+                    <p style="margin-top: 15px; font-size: 14px; color: var(--text-dim);">1:1 USD-linked stablecoin
+                        acting as a liquid reserve asset for global participants.</p>
                 </div>
                 <div class="glass-card reveal delay-3" style="text-align: center;">
                     <div class="icon-box" style="margin: 0 auto 20px;"><i class="fa-solid fa-globe"></i></div>
                     <h3>Cross-border</h3>
-                    <p style="margin-top: 15px; font-size: 14px; color: var(--text-dim);">Seamless core settlement layer bridging traditional finance and blockchain economies.</p>
+                    <p style="margin-top: 15px; font-size: 14px; color: var(--text-dim);">Seamless core settlement layer
+                        bridging traditional finance and blockchain economies.</p>
                 </div>
             </div>
         </div>
@@ -563,39 +705,53 @@
             <div class="glass-card reveal" style="margin-bottom: 40px;">
                 <div class="grid-4" style="text-align: center;">
                     <div style="padding: 20px; border-bottom: 2px solid var(--glass-border);">
-                        <i class="fa-brands fa-react" style="font-size: 30px; color: var(--primary-cyan); margin-bottom: 15px;"></i>
+                        <i class="fa-brands fa-react"
+                            style="font-size: 30px; color: var(--primary-cyan); margin-bottom: 15px;"></i>
                         <h4>Frontend</h4>
                         <p style="font-size: 12px; margin-top: 10px; color: var(--text-dim);">React / Mobile App</p>
                     </div>
                     <div style="padding: 20px; border-bottom: 2px solid var(--glass-border);">
-                        <i class="fa-solid fa-network-wired" style="font-size: 30px; color: var(--primary-cyan); margin-bottom: 15px;"></i>
+                        <i class="fa-solid fa-network-wired"
+                            style="font-size: 30px; color: var(--primary-cyan); margin-bottom: 15px;"></i>
                         <h4>Gateway</h4>
                         <p style="font-size: 12px; margin-top: 10px; color: var(--text-dim);">Throttling / WAF</p>
                     </div>
                     <div style="padding: 20px; border-bottom: 2px solid var(--primary-blue);">
-                        <i class="fa-solid fa-server" style="font-size: 30px; color: var(--primary-blue); margin-bottom: 15px;"></i>
+                        <i class="fa-solid fa-server"
+                            style="font-size: 30px; color: var(--primary-blue); margin-bottom: 15px;"></i>
                         <h4>Backend</h4>
-                        <p style="font-size: 12px; margin-top: 10px; color: var(--text-dim);">FastAPI / Microservices</p>
+                        <p style="font-size: 12px; margin-top: 10px; color: var(--text-dim);">FastAPI / Microservices
+                        </p>
                     </div>
                     <div style="padding: 20px; border-bottom: 2px solid var(--primary-blue);">
-                        <i class="fa-solid fa-lock" style="font-size: 30px; color: var(--primary-blue); margin-bottom: 15px;"></i>
+                        <i class="fa-solid fa-lock"
+                            style="font-size: 30px; color: var(--primary-blue); margin-bottom: 15px;"></i>
                         <h4>Custody</h4>
                         <p style="font-size: 12px; margin-top: 10px; color: var(--text-dim);">MPC / HSM Vault</p>
                     </div>
                 </div>
-                
+
                 <div style="margin: 40px 0; text-align: center;">
-                    <i class="fa-solid fa-angles-down" style="font-size: 24px; color: var(--primary-cyan); animation: float 2s infinite;"></i>
+                    <i class="fa-solid fa-angles-down"
+                        style="font-size: 24px; color: var(--primary-cyan); animation: float 2s infinite;"></i>
                 </div>
 
                 <div class="grid-2">
-                    <div style="background: rgba(0,0,0,0.2); padding: 25px; border-radius: 16px; border: 1px solid var(--glass-border);">
-                        <h4 style="color: var(--primary-cyan); margin-bottom: 15px;"><i class="fa-brands fa-ethereum"></i> Blockchain Layer</h4>
-                        <p style="font-size: 14px; color: var(--text-dim);">Ethereum L1 (ERC-20), Polygon Bridge, Arbitrum Scalability. Smart contracts govern Token Mint/Burn, Collateral Management, and automated Fiat-to-Token workflows.</p>
+                    <div
+                        style="background: rgba(0,0,0,0.2); padding: 25px; border-radius: 16px; border: 1px solid var(--glass-border);">
+                        <h4 style="color: var(--primary-cyan); margin-bottom: 15px;"><i
+                                class="fa-brands fa-ethereum"></i> Blockchain Layer</h4>
+                        <p style="font-size: 14px; color: var(--text-dim);">Ethereum L1 (ERC-20), Polygon Bridge,
+                            Arbitrum Scalability. Smart contracts govern Token Mint/Burn, Collateral Management, and
+                            automated Fiat-to-Token workflows.</p>
                     </div>
-                    <div style="background: rgba(0,0,0,0.2); padding: 25px; border-radius: 16px; border: 1px solid var(--glass-border);">
-                        <h4 style="color: var(--primary-cyan); margin-bottom: 15px;"><i class="fa-solid fa-magnifying-glass-chart"></i> Audit & Oracle</h4>
-                        <p style="font-size: 14px; color: var(--text-dim);">SIEM & WORM Storage, Forensic Audit Logs. Reserve Oracles connect off-chain banking data to on-chain transparency dashboards securely.</p>
+                    <div
+                        style="background: rgba(0,0,0,0.2); padding: 25px; border-radius: 16px; border: 1px solid var(--glass-border);">
+                        <h4 style="color: var(--primary-cyan); margin-bottom: 15px;"><i
+                                class="fa-solid fa-magnifying-glass-chart"></i> Audit & Oracle</h4>
+                        <p style="font-size: 14px; color: var(--text-dim);">SIEM & WORM Storage, Forensic Audit Logs.
+                            Reserve Oracles connect off-chain banking data to on-chain transparency dashboards securely.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -609,7 +765,7 @@
                 <h2 class="section-title">Growth Trajectory</h2>
                 <div class="section-subtitle">5-Year Revenue Projections (Billion USD)</div>
             </div>
-            
+
             <div class="glass-card reveal">
                 <div class="chart-container">
                     <div class="bar-chart" id="revenueChart">
@@ -645,19 +801,34 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="grid-3" style="margin-top: 40px;">
-                    <div style="text-align: center; padding: 20px; background: rgba(0,210,255,0.05); border-radius: 16px; border: 1px solid rgba(0,210,255,0.2);">
-                        <div style="font-size: 30px; font-weight: bold; color: var(--primary-cyan); font-family: 'Orbitron';">$4.0B</div>
-                        <div style="font-size: 13px; color: var(--text-dim); text-transform: uppercase; margin-top: 5px;">Reserve Interest (Y5)</div>
+                    <div
+                        style="text-align: center; padding: 20px; background: rgba(0,210,255,0.05); border-radius: 16px; border: 1px solid rgba(0,210,255,0.2);">
+                        <div
+                            style="font-size: 30px; font-weight: bold; color: var(--primary-cyan); font-family: 'Orbitron';">
+                            $4.0B</div>
+                        <div
+                            style="font-size: 13px; color: var(--text-dim); text-transform: uppercase; margin-top: 5px;">
+                            Reserve Interest (Y5)</div>
                     </div>
-                    <div style="text-align: center; padding: 20px; background: rgba(0,210,255,0.05); border-radius: 16px; border: 1px solid rgba(0,210,255,0.2);">
-                        <div style="font-size: 30px; font-weight: bold; color: var(--primary-cyan); font-family: 'Orbitron';">$4.5B</div>
-                        <div style="font-size: 13px; color: var(--text-dim); text-transform: uppercase; margin-top: 5px;">Platform Fees (Y5)</div>
+                    <div
+                        style="text-align: center; padding: 20px; background: rgba(0,210,255,0.05); border-radius: 16px; border: 1px solid rgba(0,210,255,0.2);">
+                        <div
+                            style="font-size: 30px; font-weight: bold; color: var(--primary-cyan); font-family: 'Orbitron';">
+                            $4.5B</div>
+                        <div
+                            style="font-size: 13px; color: var(--text-dim); text-transform: uppercase; margin-top: 5px;">
+                            Platform Fees (Y5)</div>
                     </div>
-                    <div style="text-align: center; padding: 20px; background: rgba(58,134,255,0.05); border-radius: 16px; border: 1px solid rgba(58,134,255,0.2);">
-                        <div style="font-size: 30px; font-weight: bold; color: var(--primary-blue); font-family: 'Orbitron';">$17.1B</div>
-                        <div style="font-size: 13px; color: var(--text-dim); text-transform: uppercase; margin-top: 5px;">Cumulative Profit</div>
+                    <div
+                        style="text-align: center; padding: 20px; background: rgba(58,134,255,0.05); border-radius: 16px; border: 1px solid rgba(58,134,255,0.2);">
+                        <div
+                            style="font-size: 30px; font-weight: bold; color: var(--primary-blue); font-family: 'Orbitron';">
+                            $17.1B</div>
+                        <div
+                            style="font-size: 13px; color: var(--text-dim); text-transform: uppercase; margin-top: 5px;">
+                            Cumulative Profit</div>
                     </div>
                 </div>
             </div>
@@ -665,27 +836,33 @@
     </section>
 
     <!-- Footer -->
-    <footer style="padding: 80px 0 40px; border-top: 1px solid var(--glass-border); background: rgba(0,0,0,0.5); text-align: center;">
+    <footer
+        style="padding: 80px 0 40px; border-top: 1px solid var(--glass-border); background: rgba(0,0,0,0.5); text-align: center;">
         <div class="container">
-            <h2 style="font-size: clamp(30px, 5vw, 50px); margin-bottom: 20px;">STABILITY MEETS <span style="color: var(--primary-cyan);">QUANTUM</span></h2>
-            <p style="color: var(--text-dim); max-width: 600px; margin: 0 auto 50px;">Building the most trusted global digital dollar infrastructure with RWA-backed reliability and quantum-speed settlement.</p>
-            
+            <h2 style="font-size: clamp(30px, 5vw, 50px); margin-bottom: 20px;">STABILITY MEETS <span
+                    style="color: var(--primary-cyan);">QUANTUM</span></h2>
+            <p style="color: var(--text-dim); max-width: 600px; margin: 0 auto 50px;">Building the most trusted global
+                digital dollar infrastructure with RWA-backed reliability and quantum-speed settlement.</p>
+
             <div class="grid-2" style="max-width: 800px; margin: 0 auto 50px; text-align: left;">
                 <div class="glass-card" style="padding: 25px;">
                     <h4 style="color: var(--primary-cyan); margin-bottom: 10px;">QUMS Group Limited</h4>
-                    <p style="font-size: 14px; color: var(--text-dim);">Corporate Reg No: 79281279<br>Mong Kok, Hong Kong SAR</p>
+                    <p style="font-size: 14px; color: var(--text-dim);">Corporate Reg No: 79281279<br>Mong Kok, Hong
+                        Kong SAR</p>
                 </div>
                 <div class="glass-card" style="padding: 25px;">
                     <h4 style="color: var(--primary-cyan); margin-bottom: 10px;">Partnerships</h4>
-                    <p style="font-size: 14px; color: var(--text-dim);">Supported by Dentons, DLA Piper<br>Big Four Independent Audit</p>
+                    <p style="font-size: 14px; color: var(--text-dim);">Supported by Dentons, DLA Piper<br>Big Four
+                        Independent Audit</p>
                 </div>
             </div>
-            
+
             <p style="font-family: 'Orbitron'; color: var(--primary-cyan); font-size: 16px; margin-bottom: 20px;">
                 <a href="#" style="color: inherit; text-decoration: none; margin-right: 20px;">www.qums.group</a>
                 <a href="mailto:info@qums.group" style="color: inherit; text-decoration: none;">info@qums.group</a>
             </p>
-            <p style="font-size: 12px; color: rgba(255,255,255,0.3);">&copy; 2026 QUMS Group Limited. All rights reserved.</p>
+            <p style="font-size: 12px; color: rgba(255,255,255,0.3);">&copy; 2026 QUMS Group Limited. All rights
+                reserved.</p>
         </div>
     </footer>
 
@@ -704,7 +881,7 @@
         // Mobile Menu Toggle
         const menuBtn = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
-        
+
         menuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
@@ -718,12 +895,12 @@
             threshold: 0.1,
             rootMargin: "0px 0px -50px 0px"
         };
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    
+
                     // Trigger bar chart animation if visible
                     if (entry.target.querySelector('#revenueChart')) {
                         setTimeout(() => {
@@ -745,4 +922,5 @@
         });
     </script>
 </body>
+
 </html>
