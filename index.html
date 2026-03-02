@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUMS Group - Premium Corporate Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-cyan: #00d2ff;
+            --primary-blue: #3a86ff;
+            --bg-deep: #030712;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --glass-bg: rgba(15, 23, 42, 0.4);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-highlight: rgba(255, 255, 255, 0.05);
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            scroll-behavior: smooth;
+        }
+
+        body { 
+            background-color: var(--bg-deep); 
+            font-family: 'Poppins', sans-serif; 
+            color: var(--text-main); 
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Blobs */
+        .blob-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: #030712;
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            opacity: 0.5;
+            animation: float 20s infinite ease-in-out alternate;
+            border-radius: 50%;
+        }
+
+        .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: rgba(0, 210, 255, 0.15); animation-delay: 0s; }
+        .blob-2 { bottom: -20%; right: -10%; width: 60vw; height: 60vw; background: rgba(58, 134, 255, 0.15); animation-delay: -5s; }
+        .blob-3 { top: 40%; left: 50%; width: 40vw; height: 40vw; background: rgba(0, 210, 255, 0.1); transform: translateX(-50%); animation-delay: -10s; }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(5%, 5%) scale(1.05); }
+            66% { transform: translate(-5%, 2%) scale(0.95); }
+            100% { transform: translate(0, -5%) scale(1); }
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(3, 7, 18, 0.3);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 15px 50px;
+            background: rgba(3, 7, 18, 0.8);
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(to right, #fff, var(--primary-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-cyan);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 120px 0 80px;
+            position: relative;
+        }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, var(--glass-highlight), transparent);
+            transform: skewX(-20deg);
+            transition: all 0.5s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px 0 rgba(0, 210, 255, 0.15);
+            border-color: rgba(0, 210, 255, 0.3);
+        }
+
+        .glass-card:hover::before {
+            left: 200%;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 { font-family: 'Orbitron', sans-serif; letter-spacing: 1px; }
+        
+        .section-title {
+            font-size: 48px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, var(--primary-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--primary-cyan);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+        }
+
+        /* Hero Section */
+        #home {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-title {
+            font-size: clamp(40px, 8vw, 90px);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff 0%, var(--primary-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(16px, 3vw, 24px);
+            color: var(--text-dim);
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary-cyan), var(--primary-blue));
+            color: #fff;
+            border: none;
+            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, var(--primary-blue), var(--primary-cyan));
+            z-index: -1;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .btn-primary:hover::before { opacity: 1; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(0, 210, 255, 0.5); }
+
+        /* Grid Layouts */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+
+        /* Icon Box */
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 210, 255, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 28px;
+            color: var(--primary-cyan);
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.1) inset;
+        }
+
+        /* Stats */
+        .stat-card { text-align: center; }
+        .stat-value { font-size: clamp(40px, 6vw, 70px); font-weight: 700; color: var(--primary-cyan); font-family: 'Orbitron'; line-height: 1; margin-bottom: 10px;text-shadow: 0 0 20px rgba(0,210,255,0.4); }
+        .stat-label { font-size: 18px; color: #fff; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;}
+        .stat-divider { height: 2px; background: linear-gradient(90deg, transparent, var(--primary-cyan), transparent); margin: 30px auto; width: 80%; }
+
+        /* Lists */
+        .custom-list { list-style: none; }
+        .custom-list li { margin-bottom: 15px; display: flex; align-items: flex-start; }
+        .custom-list li i { color: var(--primary-cyan); margin-right: 15px; margin-top: 5px; font-size: 18px; }
+
+        /* Graph / Charts */
+        .chart-container {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .bar-chart {
+            display: flex;
+            height: 100%;
+            align-items: flex-end;
+            gap: 10px;
+            padding-top: 40px;
+        }
+        
+        .bar-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            justify-content: flex-end;
+        }
+        
+        .bar {
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 210, 255, 0.2), var(--primary-cyan));
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            transition: height 1.5s cubic-bezier(0.1, 0.8, 0.2, 1);
+            height: 0; /* Animated via JS */
+            box-shadow: 0 0 15px rgba(0,210,255,0.2);
+            border: 1px solid rgba(0,210,255,0.4);
+            border-bottom: none;
+        }
+        
+        .bar:hover {
+            filter: brightness(1.2);
+            box-shadow: 0 0 25px rgba(0,210,255,0.5);
+        }
+        
+        .bar-label {
+            margin-top: 15px;
+            font-size: 14px;
+            color: var(--text-dim);
+            font-weight: 600;
+        }
+        
+        .bar-value {
+            position: absolute;
+            top: -30px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-family: 'Orbitron';
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.5s 1s ease;
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        
+        @keyframes titleGlow {
+            0% { text-shadow: 0 0 20px rgba(0, 210, 255, 0.2); }
+            100% { text-shadow: 0 0 40px rgba(0, 210, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.5); }
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 250px;
+                height: 100vh;
+                background: rgba(3, 7, 18, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 40px;
+                transition: right 0.3s ease;
+                border-left: 1px solid var(--glass-border);
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            section {
+                padding: 100px 0 60px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+            
+            .glass-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animated Background -->
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#home" class="logo">QUMS</a>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="#identity">Identity</a>
+            <a href="#ecosystem">Ecosystem</a>
+            <a href="#architecture">Tech</a>
+            <a href="#projections">Projections</a>
+        </div>
+    </nav>
+
+    <!-- Header / Hero -->
+    <section id="home">
+        <div class="container">
+            <div class="reveal">
+                <svg width="100" height="100" viewBox="0 0 100 100" style="margin: 0 auto 30px; display: block; filter: drop-shadow(0 0 10px rgba(0,210,255,0.5));">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="var(--primary-cyan)" stroke-width="2" />
+                    <path d="M30 50 Q50 20 70 50 Q50 80 30 50" fill="none" stroke="var(--primary-cyan)" stroke-width="4" />
+                    <circle cx="50" cy="50" r="10" fill="var(--primary-cyan)" />
+                </svg>
+                <h1 class="hero-title">QUMS GROUP</h1>
+                <p style="font-size: 24px; letter-spacing: 5px; color: var(--primary-cyan); font-family: 'Orbitron'; margin-bottom: 30px; text-shadow: 0 0 10px rgba(0,210,255,0.3);">QUANTUM FINANCE ECOSYSTEM</p>
+                <p class="hero-subtitle">The Next-Gen Global Digital Dollar Infrastructure powered by Post-Quantum Security & High-Quality Liquid Assets.</p>
+                <a href="#identity" class="btn btn-primary">Discover the Future</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 2: Corporate Identity -->
+    <section id="identity">
+        <div class="container">
+            <div class="reveal">
+                <h2 class="section-title">Corporate Identity</h2>
+                <div class="section-subtitle">Legal Status & Strategic Foundation</div>
+            </div>
+            
+            <div class="grid-2">
+                <div class="glass-card reveal delay-1">
+                    <h3>Registered Information</h3>
+                    <p style="margin: 15px 0 25px; color: var(--text-dim);">Based on Certificate of Incorporation (No. 79281279)</p>
+                    <ul class="custom-list">
+                        <li><i class="fa-solid fa-building"></i> <span><strong>Entity:</strong> QUMS Group Limited (Limited by Shares)</span></li>
+                        <li><i class="fa-solid fa-calendar"></i> <span><strong>Incorporated:</strong> 28 November 2025 (Hong Kong)</span></li>
+                        <li><i class="fa-solid fa-location-dot"></i> <span><strong>HQ:</strong> RM 14, 29/F, Ho King Comm Centre, Mong Kok, HK</span></li>
+                        <li><i class="fa-solid fa-user-tie"></i> <span><strong>Founder:</strong> Song Chang Moo</span></li>
+                    </ul>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 30px;">
+                    <div class="glass-card reveal delay-2" style="border-left: 4px solid var(--primary-blue); padding: 30px;">
+                        <h3 style="color: var(--primary-blue); margin-bottom: 10px;">HKMA Compliance</h3>
+                        <p>Aligning with Hong Kong Stablecoin Regulatory Sandbox guidelines for absolute legal certainty.</p>
+                    </div>
+                    <div class="glass-card reveal delay-3" style="border-left: 4px solid var(--primary-cyan); padding: 30px;">
+                        <h3 style="color: var(--primary-cyan); margin-bottom: 10px;">Reserve Safety</h3>
+                        <p>100% Cash & HQLA segregation in top-tier licensed financial institutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3 & 5 combined: Core & Scale -->
+    <section id="ecosystem">
+        <div class="container">
+            <div class="reveal text-center" style="text-align: center; margin-bottom: 60px;">
+                <h2 class="section-title">Digital Dollar Hub</h2>
+                <div class="section-subtitle">Massive RWA Collateralization & Quantum Security</div>
+            </div>
+            
+            <div class="glass-card reveal" style="margin-bottom: 50px;">
+                <div class="grid-2" style="align-items: center;">
+                    <div class="stat-card">
+                        <div class="stat-value">$880B</div>
+                        <div class="stat-label">Underlying Assets in HK</div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-value" style="font-size: clamp(30px, 4vw, 50px); color: var(--primary-blue);">$240B</div>
+                        <div class="stat-label">Initial Targeted Issuance</div>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 20px;">Reliability Model</h3>
+                        <ul class="custom-list">
+                            <li><i class="fa-solid fa-shield-halved"></i> <span>Post-Quantum Cryptography against future threats</span></li>
+                            <li><i class="fa-solid fa-vault"></i> <span>Segregated Trustee Custody</span></li>
+                            <li><i class="fa-solid fa-file-contract"></i> <span>Monthly External Attestations</span></li>
+                            <li><i class="fa-solid fa-chart-pie"></i> <span>100% Cash & Cash Equivalents with Real-time PoR</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-3">
+                <div class="glass-card reveal delay-1" style="text-align: center;">
+                    <div class="icon-box" style="margin: 0 auto 20px;"><i class="fa-solid fa-microchip"></i></div>
+                    <h3>Quantum Core</h3>
+                    <p style="margin-top: 15px; font-size: 14px; color: var(--text-dim);">Utilizing superposition logic for ultra-high throughput transactions & advanced risk analysis.</p>
+                </div>
+                <div class="glass-card reveal delay-2" style="text-align: center;">
+                    <div class="icon-box" style="margin: 0 auto 20px;"><i class="fa-solid fa-coins"></i></div>
+                    <h3>USDQS Token</h3>
+                    <p style="margin-top: 15px; font-size: 14px; color: var(--text-dim);">1:1 USD-linked stablecoin acting as a liquid reserve asset for global participants.</p>
+                </div>
+                <div class="glass-card reveal delay-3" style="text-align: center;">
+                    <div class="icon-box" style="margin: 0 auto 20px;"><i class="fa-solid fa-globe"></i></div>
+                    <h3>Cross-border</h3>
+                    <p style="margin-top: 15px; font-size: 14px; color: var(--text-dim);">Seamless core settlement layer bridging traditional finance and blockchain economies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6 & 7: Architecture -->
+    <section id="architecture">
+        <div class="container">
+            <div class="reveal">
+                <h2 class="section-title">Platform Architecture</h2>
+                <div class="section-subtitle">Hybrid Layered Stack & Modular Contracts</div>
+            </div>
+
+            <div class="glass-card reveal" style="margin-bottom: 40px;">
+                <div class="grid-4" style="text-align: center;">
+                    <div style="padding: 20px; border-bottom: 2px solid var(--glass-border);">
+                        <i class="fa-brands fa-react" style="font-size: 30px; color: var(--primary-cyan); margin-bottom: 15px;"></i>
+                        <h4>Frontend</h4>
+                        <p style="font-size: 12px; margin-top: 10px; color: var(--text-dim);">React / Mobile App</p>
+                    </div>
+                    <div style="padding: 20px; border-bottom: 2px solid var(--glass-border);">
+                        <i class="fa-solid fa-network-wired" style="font-size: 30px; color: var(--primary-cyan); margin-bottom: 15px;"></i>
+                        <h4>Gateway</h4>
+                        <p style="font-size: 12px; margin-top: 10px; color: var(--text-dim);">Throttling / WAF</p>
+                    </div>
+                    <div style="padding: 20px; border-bottom: 2px solid var(--primary-blue);">
+                        <i class="fa-solid fa-server" style="font-size: 30px; color: var(--primary-blue); margin-bottom: 15px;"></i>
+                        <h4>Backend</h4>
+                        <p style="font-size: 12px; margin-top: 10px; color: var(--text-dim);">FastAPI / Microservices</p>
+                    </div>
+                    <div style="padding: 20px; border-bottom: 2px solid var(--primary-blue);">
+                        <i class="fa-solid fa-lock" style="font-size: 30px; color: var(--primary-blue); margin-bottom: 15px;"></i>
+                        <h4>Custody</h4>
+                        <p style="font-size: 12px; margin-top: 10px; color: var(--text-dim);">MPC / HSM Vault</p>
+                    </div>
+                </div>
+                
+                <div style="margin: 40px 0; text-align: center;">
+                    <i class="fa-solid fa-angles-down" style="font-size: 24px; color: var(--primary-cyan); animation: float 2s infinite;"></i>
+                </div>
+
+                <div class="grid-2">
+                    <div style="background: rgba(0,0,0,0.2); padding: 25px; border-radius: 16px; border: 1px solid var(--glass-border);">
+                        <h4 style="color: var(--primary-cyan); margin-bottom: 15px;"><i class="fa-brands fa-ethereum"></i> Blockchain Layer</h4>
+                        <p style="font-size: 14px; color: var(--text-dim);">Ethereum L1 (ERC-20), Polygon Bridge, Arbitrum Scalability. Smart contracts govern Token Mint/Burn, Collateral Management, and automated Fiat-to-Token workflows.</p>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.2); padding: 25px; border-radius: 16px; border: 1px solid var(--glass-border);">
+                        <h4 style="color: var(--primary-cyan); margin-bottom: 15px;"><i class="fa-solid fa-magnifying-glass-chart"></i> Audit & Oracle</h4>
+                        <p style="font-size: 14px; color: var(--text-dim);">SIEM & WORM Storage, Forensic Audit Logs. Reserve Oracles connect off-chain banking data to on-chain transparency dashboards securely.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 11: Financial Projections -->
+    <section id="projections">
+        <div class="container">
+            <div class="reveal">
+                <h2 class="section-title">Growth Trajectory</h2>
+                <div class="section-subtitle">5-Year Revenue Projections (Billion USD)</div>
+            </div>
+            
+            <div class="glass-card reveal">
+                <div class="chart-container">
+                    <div class="bar-chart" id="revenueChart">
+                        <div class="bar-wrapper">
+                            <div class="bar" style="--target-height: 15%;" data-value="$1.5B">
+                                <div class="bar-value">$1.5B</div>
+                            </div>
+                            <div class="bar-label">Year 1</div>
+                        </div>
+                        <div class="bar-wrapper">
+                            <div class="bar" style="--target-height: 26%;" data-value="$2.6B">
+                                <div class="bar-value">$2.6B</div>
+                            </div>
+                            <div class="bar-label">Year 2</div>
+                        </div>
+                        <div class="bar-wrapper">
+                            <div class="bar" style="--target-height: 44%;" data-value="$4.4B">
+                                <div class="bar-value">$4.4B</div>
+                            </div>
+                            <div class="bar-label">Year 3</div>
+                        </div>
+                        <div class="bar-wrapper">
+                            <div class="bar" style="--target-height: 66%;" data-value="$6.6B">
+                                <div class="bar-value">$6.6B</div>
+                            </div>
+                            <div class="bar-label">Year 4</div>
+                        </div>
+                        <div class="bar-wrapper">
+                            <div class="bar" style="--target-height: 94%;" data-value="$9.4B">
+                                <div class="bar-value">$9.4B</div>
+                            </div>
+                            <div class="bar-label">Year 5</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid-3" style="margin-top: 40px;">
+                    <div style="text-align: center; padding: 20px; background: rgba(0,210,255,0.05); border-radius: 16px; border: 1px solid rgba(0,210,255,0.2);">
+                        <div style="font-size: 30px; font-weight: bold; color: var(--primary-cyan); font-family: 'Orbitron';">$4.0B</div>
+                        <div style="font-size: 13px; color: var(--text-dim); text-transform: uppercase; margin-top: 5px;">Reserve Interest (Y5)</div>
+                    </div>
+                    <div style="text-align: center; padding: 20px; background: rgba(0,210,255,0.05); border-radius: 16px; border: 1px solid rgba(0,210,255,0.2);">
+                        <div style="font-size: 30px; font-weight: bold; color: var(--primary-cyan); font-family: 'Orbitron';">$4.5B</div>
+                        <div style="font-size: 13px; color: var(--text-dim); text-transform: uppercase; margin-top: 5px;">Platform Fees (Y5)</div>
+                    </div>
+                    <div style="text-align: center; padding: 20px; background: rgba(58,134,255,0.05); border-radius: 16px; border: 1px solid rgba(58,134,255,0.2);">
+                        <div style="font-size: 30px; font-weight: bold; color: var(--primary-blue); font-family: 'Orbitron';">$17.1B</div>
+                        <div style="font-size: 13px; color: var(--text-dim); text-transform: uppercase; margin-top: 5px;">Cumulative Profit</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 80px 0 40px; border-top: 1px solid var(--glass-border); background: rgba(0,0,0,0.5); text-align: center;">
+        <div class="container">
+            <h2 style="font-size: clamp(30px, 5vw, 50px); margin-bottom: 20px;">STABILITY MEETS <span style="color: var(--primary-cyan);">QUANTUM</span></h2>
+            <p style="color: var(--text-dim); max-width: 600px; margin: 0 auto 50px;">Building the most trusted global digital dollar infrastructure with RWA-backed reliability and quantum-speed settlement.</p>
+            
+            <div class="grid-2" style="max-width: 800px; margin: 0 auto 50px; text-align: left;">
+                <div class="glass-card" style="padding: 25px;">
+                    <h4 style="color: var(--primary-cyan); margin-bottom: 10px;">QUMS Group Limited</h4>
+                    <p style="font-size: 14px; color: var(--text-dim);">Corporate Reg No: 79281279<br>Mong Kok, Hong Kong SAR</p>
+                </div>
+                <div class="glass-card" style="padding: 25px;">
+                    <h4 style="color: var(--primary-cyan); margin-bottom: 10px;">Partnerships</h4>
+                    <p style="font-size: 14px; color: var(--text-dim);">Supported by Dentons, DLA Piper<br>Big Four Independent Audit</p>
+                </div>
+            </div>
+            
+            <p style="font-family: 'Orbitron'; color: var(--primary-cyan); font-size: 16px; margin-bottom: 20px;">
+                <a href="#" style="color: inherit; text-decoration: none; margin-right: 20px;">www.qums.group</a>
+                <a href="mailto:info@qums.group" style="color: inherit; text-decoration: none;">info@qums.group</a>
+            </p>
+            <p style="font-size: 12px; color: rgba(255,255,255,0.3);">&copy; 2026 QUMS Group Limited. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactions -->
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        navLinks.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // Trigger bar chart animation if visible
+                    if (entry.target.querySelector('#revenueChart')) {
+                        setTimeout(() => {
+                            const bars = document.querySelectorAll('.bar');
+                            bars.forEach(bar => {
+                                bar.style.height = bar.getAttribute('style').match(/--target-height:\s*([^;]+)/)[1];
+                                setTimeout(() => {
+                                    bar.querySelector('.bar-value').style.opacity = '1';
+                                }, 1500);
+                            });
+                        }, 500);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

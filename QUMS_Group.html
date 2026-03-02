@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUMS Group - Premium Corporate Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-cyan: #00d2ff;
+            --primary-blue: #3a86ff;
+            --bg-deep: #030712;
+            --bg-card: rgba(15, 23, 42, 0.6);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --accent-glow: rgba(0, 210, 255, 0.4);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: #0f172a; font-family: 'Poppins', sans-serif; color: var(--text-main); line-height: 1.6; }
+
+        /* Slide Frame */
+        .slide {
+            width: 1280px; height: 720px;
+            background: var(--bg-deep);
+            margin: 40px auto;
+            position: relative;
+            overflow: hidden;
+            display: flex; flex-direction: column;
+            padding: 60px 80px;
+            border-radius: 20px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Animated Background Elements */
+        .slide::before {
+            content: ''; position: absolute; top: -20%; right: -10%; width: 60%; height: 80%;
+            background: radial-gradient(circle, rgba(0, 210, 255, 0.08) 0%, transparent 70%);
+            z-index: 0; transform: rotate(-15deg);
+        }
+
+        /* Typography */
+        h1, h2, h3 { font-family: 'Orbitron', sans-serif; letter-spacing: 1px; }
+        .slide-header { position: relative; z-index: 10; margin-bottom: 40px; border-left: 8px solid var(--primary-cyan); padding-left: 30px; }
+        .slide-header h2 { font-size: 42px; text-transform: uppercase; color: var(--text-main); }
+        .slide-header p { font-size: 18px; color: var(--primary-cyan); font-weight: 600; text-transform: uppercase; margin-top: 5px; }
+
+        /* Components */
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; z-index: 1; }
+        .card { background: var(--bg-card); border: 1px solid rgba(0, 210, 255, 0.15); padding: 30px; border-radius: 16px; backdrop-filter: blur(10px); }
+        .icon-box { width: 60px; height: 60px; background: rgba(0, 210, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 28px; color: var(--primary-cyan); border: 1px solid var(--primary-cyan); }
+        
+        /* Stats & Highlights */
+        .stat-value { font-size: 72px; font-weight: 700; color: var(--primary-cyan); line-height: 1; margin-bottom: 10px; font-family: 'Orbitron'; }
+        .stat-label { font-size: 20px; color: #fff; font-weight: 600; }
+
+        /* Charts */
+        .chart-svg { width: 100%; height: 350px; overflow: visible; }
+        .line-primary { fill: none; stroke: var(--primary-cyan); stroke-width: 4; }
+        .area-primary { fill: url(#grad-cyan); opacity: 0.3; }
+
+        /* Roadmap Table */
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th { text-align: left; padding: 20px; border-bottom: 2px solid var(--primary-cyan); color: var(--primary-cyan); font-family: 'Orbitron'; font-size: 14px; }
+        td { padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 16px; vertical-align: top; }
+
+        /* Specific Page: Architecture */
+        .arch-node { padding: 15px; border: 1px solid var(--primary-cyan); border-radius: 8px; text-align: center; font-size: 14px; background: rgba(0, 210, 255, 0.05); }
+
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .slide > * { animation: fadeIn 0.8s ease-out forwards; }
+    </style>
+</head>
+<body>
+
+<!-- Slide 1: Cover -->
+<div class="slide" style="justify-content: center; align-items: center; text-align: center;">
+    <div style="margin-bottom: 40px;">
+        <svg width="120" height="120" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="var(--primary-cyan)" stroke-width="2" />
+            <path d="M30 50 Q50 20 70 50 Q50 80 30 50" fill="none" stroke="var(--primary-cyan)" stroke-width="4" />
+            <circle cx="50" cy="50" r="10" fill="var(--primary-cyan)" />
+        </svg>
+    </div>
+    <h1 style="font-size: 90px; margin-bottom: 10px; background: linear-gradient(to right, #fff, var(--primary-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">QUMS GROUP</h1>
+    <p style="font-size: 28px; letter-spacing: 5px; color: var(--primary-cyan); font-family: 'Orbitron'; margin-bottom: 40px;">QUANTUM FINANCE ECOSYSTEM</p>
+    <div style="padding: 20px 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 40px; background: rgba(255,255,255,0.05);">
+        <p style="font-size: 18px; color: var(--text-dim);">The Next-Gen Global Digital Dollar Infrastructure</p>
+    </div>
+</div>
+
+<!-- Slide 2: Corporate Identity -->
+<div class="slide">
+    <header class="slide-header">
+        <h2>Corporate Identity</h2>
+        <p>Legal Status & Strategic Foundation</p>
+    </header>
+    <div class="content-grid" style="grid-template-columns: 1.2fr 0.8fr;">
+        <div class="card">
+            <h3>Registered Information</h3>
+            <p style="margin-top: 20px; font-size: 18px;">Based on Certificate of Incorporation (No. 79281279)</p>
+            <ul style="list-style: none; margin-top: 25px;">
+                <li style="margin-bottom: 20px; display: flex; align-items: center;">
+                    <i class="fa-solid fa-building" style="width: 40px; color: var(--primary-cyan);"></i>
+                    <span><strong>Entity:</strong> QUMS Group Limited (Limited by Shares)</span>
+                </li>
+                <li style="margin-bottom: 20px; display: flex; align-items: center;">
+                    <i class="fa-solid fa-calendar" style="width: 40px; color: var(--primary-cyan);"></i>
+                    <span><strong>Incorporated:</strong> 28 November 2025 (Hong Kong)</span>
+                </li>
+                <li style="margin-bottom: 20px; display: flex; align-items: center;">
+                    <i class="fa-solid fa-location-dot" style="width: 40px; color: var(--primary-cyan);"></i>
+                    <span><strong>HQ:</strong> RM 14, 29/F, Ho King Comm Centre, Mong Kok, HK</span>
+                </li>
+                <li style="display: flex; align-items: center;">
+                    <i class="fa-solid fa-user-tie" style="width: 40px; color: var(--primary-cyan);"></i>
+                    <span><strong>Founder:</strong> Song Chang Moo</span>
+                </li>
+            </ul>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div class="card" style="text-align: center; border-color: var(--primary-blue);">
+                <h3 style="color: var(--primary-blue);">HKMA Compliance</h3>
+                <p style="font-size: 16px; margin-top: 10px;">Aligning with Hong Kong Stablecoin Regulatory Sandbox guidelines.</p>
+            </div>
+            <div class="card" style="text-align: center; border-color: var(--primary-cyan);">
+                <h3 style="color: var(--primary-cyan);">Reserve Safety</h3>
+                <p style="font-size: 16px; margin-top: 10px;">100% Cash & HQLA segregation in top-tier licensed financial institutions.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 3: Executive Summary -->
+<div class="slide">
+    <header class="slide-header">
+        <h2>Executive Summary</h2>
+        <p>Quantum Security & RWA Reliability</p>
+    </header>
+    <div style="display: flex; gap: 20px;">
+        <div class="card" style="flex: 1;">
+            <div class="icon-box"><i class="fa-solid fa-microchip"></i></div>
+            <h3>Quantum Core</h3>
+            <p>Utilizing superposition for ultra-high throughput transactions & advanced risk analysis.</p>
+        </div>
+        <div class="card" style="flex: 1;">
+            <div class="icon-box"><i class="fa-solid fa-vault"></i></div>
+            <h3>USDQS Token</h3>
+            <p>1:1 USD-linked stablecoin backed by ~$880B in Hong Kong-held RWA assets.</p>
+        </div>
+        <div class="card" style="flex: 1;">
+            <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Post-Quantum Security</h3>
+            <p>Data integrity guaranteed by PQC encryption against future computational threats.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 4: Strategic Background -->
+<div class="slide">
+    <header class="slide-header">
+        <h2>Digital Dollar Hub</h2>
+        <p>Global Financial Paradigm Shift</p>
+    </header>
+    <div class="content-grid">
+        <div style="padding-right: 20px;">
+            <p style="font-size: 24px; color: #fff; margin-bottom: 20px;">Moving from centralized fiat systems to blockchain-native digital assets.</p>
+            <p>USDQS acts as the core settlement layer for international finance, investment, and remittances.</p>
+            <div style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="card" style="padding: 20px; text-align: center;">
+                    <i class="fa-solid fa-globe" style="font-size: 30px; color: var(--primary-cyan); margin-bottom: 10px;"></i>
+                    <p>Cross-border Settlement</p>
+                </div>
+                <div class="card" style="padding: 20px; text-align: center;">
+                    <i class="fa-solid fa-hand-holding-dollar" style="font-size: 30px; color: var(--primary-cyan); margin-bottom: 10px;"></i>
+                    <p>Liquid Reserve Asset</p>
+                </div>
+            </div>
+        </div>
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid var(--primary-cyan);">
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=600" alt="HK Skyline" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6) hue-rotate(180deg);">
+        </div>
+    </div>
+</div>
+
+<!-- Slide 5: Asset Scale -->
+<div class="slide">
+    <header class="slide-header">
+        <h2>Strategic Scale</h2>
+        <p>Massive RWA Collateralization</p>
+    </header>
+    <div class="content-grid" style="align-items: center;">
+        <div style="text-align: center;">
+            <div class="stat-value">$880B</div>
+            <div class="stat-label">Underlying Assets in HK</div>
+            <div style="height: 2px; background: var(--primary-cyan); margin: 30px auto; width: 60%;"></div>
+            <div class="stat-value" style="font-size: 48px; color: var(--primary-blue);">$240B</div>
+            <div class="stat-label">Initial Targeted Issuance</div>
+        </div>
+        <div class="card">
+            <h3>Reliability Model</h3>
+            <ul class="bullet-list" style="list-style: none; margin-top: 20px;">
+                <li style="margin-bottom: 15px;"><i class="fa-solid fa-circle-check" style="color: var(--primary-cyan); margin-right: 15px;"></i> Segregated Trustee Custody</li>
+                <li style="margin-bottom: 15px;"><i class="fa-solid fa-circle-check" style="color: var(--primary-cyan); margin-right: 15px;"></i> Monthly External Attestations</li>
+                <li style="margin-bottom: 15px;"><i class="fa-solid fa-circle-check" style="color: var(--primary-cyan); margin-right: 15px;"></i> 100% Cash & Cash Equivalents</li>
+                <li><i class="fa-solid fa-circle-check" style="color: var(--primary-cyan); margin-right: 15px;"></i> Real-time Proof of Reserve (PoR)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 6: Tech Architecture -->
+<div class="slide">
+    <header class="slide-header">
+        <h2>Platform Architecture</h2>
+        <p>Hybrid Layered Security Stack</p>
+    </header>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px;">
+        <div class="card arch-node">Frontend<br><small>React / Mobile</small></div>
+        <div class="card arch-node">API Gateway<br><small>Throttling / WAF</small></div>
+        <div class="card arch-node" style="border-color: var(--primary-blue);">Backend<br><small>FastAPI / Microservices</small></div>
+        <div class="card arch-node" style="border-color: var(--primary-blue);">Custody<br><small>MPC / HSM Vault</small></div>
+    </div>
+    <div style="text-align: center; margin: 30px 0; font-size: 30px; color: var(--primary-cyan);"><i class="fa-solid fa-arrow-down-long"></i></div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+        <div class="card">
+            <h4 style="color: var(--primary-cyan); margin-bottom: 10px;">Blockchain Layer</h4>
+            <p style="font-size: 14px;">Ethereum L1 (ERC-20) / Polygon Bridge / Arbitrum Scalability</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--primary-cyan); margin-bottom: 10px;">Audit & Logging</h4>
+            <p style="font-size: 14px;">SIEM & WORM Storage / Forensic Audit Logs / Reserve Oracle</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 7: Smart Contracts -->
+<div class="slide">
+    <header class="slide-header">
+        <h2>Modular Smart Contracts</h2>
+        <p>Autonomous Stability & Governance</p>
+    </header>
+    <div class="content-grid">
+        <div class="card" style="border-left: 5px solid var(--primary-cyan);">
+            <h3>1. Token Contract</h3>
+            <p style="font-size: 15px; margin-top: 10px;">Controls Mint/Burn and transfers. Multi-sig enforced supply discipline with role-based access.</p>
+        </div>
+        <div class="card" style="border-left: 5px solid var(--primary-blue);">
+            <h3>2. Collateral Management</h3>
+            <p style="font-size: 15px; margin-top: 10px;">Records 1:1 parity and reserve metadata. Ingests reports from external audit Oracles.</p>
+        </div>
+        <div class="card" style="border-left: 5px solid var(--primary-cyan);">
+            <h3>3. Deposit & Redemption</h3>
+            <p style="font-size: 15px; margin-top: 10px;">Automates fiat-to-token workflows. Integrated with KYC/AML risk assessment modules.</p>
+        </div>
+        <div class="card" style="border-left: 5px solid var(--primary-blue);">
+            <h3>4. Reserve Oracle</h3>
+            <p style="font-size: 15px; margin-top: 10px;">Connects off-chain banking data to on-chain transparency dashboards for end-users.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 8: Roadmap -->
+<div class="slide">
+    <header class="slide-header">
+        <h2>Execution Roadmap</h2>
+        <p>3-Phase Strategic Rollout</p>
+    </header>
+    <div class="card" style="padding: 0; overflow: hidden;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Phase 01: Preparation</th>
+                    <th>Phase 02: Issuance</th>
+                    <th>Phase 03: Connectivity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>• Regulatory Review (HK/SG)</p>
+                        <p>• SKR Confirmation</p>
+                        <p>• Policy Baselining</p>
+                        <p>• Law Firm Engagement</p>
+                    </td>
+                    <td>
+                        <p>• Trust/Custody Setup</p>
+                        <p>• Smart Contract Audit</p>
+                        <p>• Initial $240B Minting</p>
+                        <p>• Security Stress Testing</p>
+                    </td>
+                    <td>
+                        <p>• MXLY Ecosystem Link</p>
+                        <p>• Tier-1 Venue Admission</p>
+                        <p>• Remittance Integration</p>
+                        <p>• Global Expansion (US/EU)</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Slide 9: Competitive Edge -->
+<div class="slide">
+    <header class="slide-header">
+        <h2>Competitive Edge</h2>
+        <p>USDQS vs. Legacy Stablecoins</p>
+    </header>
+    <div class="content-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="card">
+            <h3>Strategic Advantage</h3>
+            <ul style="list-style: none; margin-top: 20px;">
+                <li style="margin-bottom: 15px;"><strong>Asian Hub:</strong> Leveraging HK's unique financial status.</li>
+                <li style="margin-bottom: 15px;"><strong>Ecosystem:</strong> Native synergy with MXLY users.</li>
+                <li><strong>Transparency:</strong> Regulated trustee vs centralized custody.</li>
+            </ul>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <svg viewBox="0 0 400 400" width="300">
+                <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="20" />
+                <path d="M200 50 A150 150 0 1 1 100 320" fill="none" stroke="var(--primary-cyan)" stroke-width="20" stroke-linecap="round" />
+                <text x="200" y="210" text-anchor="middle" font-size="32" fill="white" font-family="Orbitron">USDQS</text>
+                <text x="200" y="240" text-anchor="middle" font-size="14" fill="var(--text-dim)">Next-Gen Standard</text>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 10: Market Analysis -->
+<div class="slide">
+    <header class="slide-header">
+        <h2>Market Opportunity</h2>
+        <p>Global Stablecoin Demand 2025</p>
+    </header>
+    <div class="content-grid">
+        <div class="card">
+            <h3 style="margin-bottom: 30px;">Total Supply: $284.6B</h3>
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <div style="display: flex; justify-content: space-between;"><span>Tether (USDT)</span><span>66.5%</span></div>
+                <div style="height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px;"><div style="width: 66.5%; height: 100%; background: var(--primary-blue); border-radius: 5px;"></div></div>
+                <div style="display: flex; justify-content: space-between;"><span>USD Coin (USDC)</span><span>22.2%</span></div>
+                <div style="height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px;"><div style="width: 22.2%; height: 100%; background: var(--primary-cyan); border-radius: 5px;"></div></div>
+                <div style="display: flex; justify-content: space-between;"><span>Other RWAs</span><span>11.3%</span></div>
+                <div style="height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px;"><div style="width: 11.3%; height: 100%; background: #fff; border-radius: 5px;"></div></div>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Trends</h3>
+            <p style="margin-top: 15px;">- Clear preference for RWA-backed vs. Algorithmic.</p>
+            <p>- Regulatory formalization favoring credible governance.</p>
+            <p>- Real-economy use cases (B2B, Remittances) expanding rapidly.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 11: Financial Projections -->
+<div class="slide">
+    <header class="slide-header">
+        <h2>Financial Projections</h2>
+        <p>5-Year Revenue Growth (Billion USD)</p>
+    </header>
+    <div class="content-area">
+        <div class="chart-container">
+            <svg class="chart-svg" viewBox="0 0 1000 400">
+                <defs>
+                    <linearGradient id="grad-cyan" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="var(--primary-cyan)" />
+                        <stop offset="100%" stop-color="transparent" />
+                    </linearGradient>
+                </defs>
+                <path class="area-primary" d="M100,350 L200,300 L400,240 L600,160 L800,80 L800,350 Z" />
+                <path class="line-primary" d="M100,350 L200,300 L400,240 L600,160 L800,80" />
+                
+                <g fill="#fff" font-size="14" text-anchor="middle">
+                    <circle cx="100" cy="350" r="6" fill="var(--primary-cyan)" /> <text x="100" y="380">Year 1 ($1.5B)</text>
+                    <circle cx="200" cy="300" r="6" fill="var(--primary-cyan)" /> <text x="200" y="380">Year 2 ($2.6B)</text>
+                    <circle cx="400" cy="240" r="6" fill="var(--primary-cyan)" /> <text x="400" y="380">Year 3 ($4.4B)</text>
+                    <circle cx="600" cy="160" r="6" fill="var(--primary-cyan)" /> <text x="600" y="380">Year 4 ($6.6B)</text>
+                    <circle cx="800" cy="80" r="6" fill="var(--primary-cyan)" /> <text x="800" y="380">Year 5 ($9.4B)</text>
+                </g>
+            </svg>
+        </div>
+        <div class="content-grid" style="grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
+            <div class="card" style="padding: 15px; text-align: center;">
+                <p style="color: var(--primary-cyan); font-size: 24px; font-weight: 700;">$4.0B</p>
+                <p style="font-size: 12px;">Reserve Interest (Y5)</p>
+            </div>
+            <div class="card" style="padding: 15px; text-align: center;">
+                <p style="color: var(--primary-cyan); font-size: 24px; font-weight: 700;">$4.5B</p>
+                <p style="font-size: 12px;">Platform Fees (Y5)</p>
+            </div>
+            <div class="card" style="padding: 15px; text-align: center;">
+                <p style="color: var(--primary-blue); font-size: 24px; font-weight: 700;">$17.1B</p>
+                <p style="font-size: 12px;">Cumulative Profit</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 12: Vision & Contact -->
+<div class="slide" style="justify-content: center; align-items: center; text-align: center;">
+    <h2 style="font-size: 60px; margin-bottom: 20px;">STABILITY MEETS <span style="color: var(--primary-cyan);">QUANTUM</span></h2>
+    <p style="font-size: 24px; color: var(--text-dim); max-width: 800px;">Building the most trusted global digital dollar infrastructure with RWA-backed reliability and quantum-speed settlement.</p>
+    
+    <div style="margin-top: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; width: 80%;">
+        <div class="card">
+            <h4 style="color: var(--primary-cyan);">QUMS Group Limited</h4>
+            <p style="font-size: 14px; margin-top: 10px;">Corporate Reg No: 79281279</p>
+            <p style="font-size: 14px;">Mong Kok, Hong Kong SAR</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--primary-cyan);">Partnerships</h4>
+            <p style="font-size: 14px; margin-top: 10px;">Supported by Dentons, DLA Piper</p>
+            <p style="font-size: 14px;">Big Four Independent Audit</p>
+        </div>
+    </div>
+
+    <p style="margin-top: 40px; font-family: 'Orbitron'; color: var(--primary-cyan); font-size: 18px;">www.qums.group | info@qums.group</p>
+</div>
+
+</body>
+</html>
